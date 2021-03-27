@@ -1,5 +1,6 @@
 //connect to the mongo server
 const mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 const dbName ="petShelter";
 
 mongoose.connect('mongodb://localhost/' + dbName,{

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 // model - is the shape of the json data that we want to put in the collection
 const PetSchema = new mongoose.Schema(
     
@@ -6,7 +7,8 @@ const PetSchema = new mongoose.Schema(
         name:{
             type: String,
             required:[true, "You must enter a name for pet"],
-            minlength:[3, "Pet name must be at least 3 chars long"]
+            minlength:[3, "Pet name must be at least 3 chars long"],
+            unique:[true, "Pet name has to be unique"]
              },
         type:{
                 type: String,
@@ -40,5 +42,6 @@ const PetSchema = new mongoose.Schema(
     }
 );
 const modelName = "Pet";
+PetSchema.plugin(uniqueValidator);
 const  Pet = mongoose.model(modelName,PetSchema);
 module.exports= Pet;
