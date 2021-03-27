@@ -6,6 +6,7 @@ module.exports={
     },
     getAll:(req,res) =>{
         PetShelter.find({})
+        .sort({type:"ascending"})
         .then((allPet) => {
             console.log(allPet)
             res.json(allPet)
@@ -38,7 +39,10 @@ module.exports={
     },
     update: (req, res) => {
       console.log(req.body);
-      PetShelter.findByIdAndUpdate(req.params.id,req.body)
+      PetShelter.findByIdAndUpdate(req.params.id,req.body,{
+          new:true,
+          runValidators:true
+      })
         .then((updated) => {
           console.log(updated);
           // res.json is the equivalent of a return from the function
