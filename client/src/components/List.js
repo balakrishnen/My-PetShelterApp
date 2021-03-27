@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const ListAll = (props) => {
     const [allPets, setAllPets] = useState([]);
+  
     useEffect(() =>{
         axios.get("http://localhost:8000/api/pets")
         .then((res) =>{
@@ -30,7 +31,7 @@ const ListAll = (props) => {
             <div>
                 <table>
                     <thead>
-                    <th>Pet </th>
+                    <th>Name </th>
                     <th>Type</th>
                     <th>Actions avaiable</th>
                     </thead>
@@ -46,6 +47,12 @@ const ListAll = (props) => {
                             <td>
                             <button><Link to ={`/pet/${pet._id}/edit`}>Edit</Link></button>
                             <button className=".deleteBtn" onClick ={() => deletePet(pet._id)}>Adopt</button>
+                            </td>
+                            <td>
+                                <button onClick={(e) => {
+                                e.target.setAttribute("disabled", true);
+                                }
+                                }>Like</button>
                             </td>
                         </tr>
                 ))}
