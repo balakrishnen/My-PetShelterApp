@@ -55,6 +55,11 @@ const New = (props) => {
                              {
                                 errs.name ? <span className="error-text">{errs.name.message}</span> : null
                               }
+                              {
+                                  name.length <3 && name.length >0?
+                                  <span className="error-text">name &gt; {name.length} </span>
+                                  :null
+                              }
                             </div>
                             <div>
                             <label>Type:</label>
@@ -65,6 +70,11 @@ const New = (props) => {
                             {
                                 errs.type ? <span  className="error-text">{errs.type.message}</span> : null
                               }
+                               {
+                                  type.length <3 && type.length >0 ?
+                                  <span className="error-text">type &gt; {type.length} </span>
+                                  :null
+                              }
                            </div>
                            <div>
                             <label>Description:</label>
@@ -73,6 +83,11 @@ const New = (props) => {
                             />
                             {
                                 errs.description ? <span  className="error-text">{errs.description.message}</span> : null
+                              }
+                               {
+                                  description.length <3 && description.length >0?
+                                <span className="error-text">description &gt; {description.length} </span>
+                                  :null
                               }
                             </div>
                             <div>
