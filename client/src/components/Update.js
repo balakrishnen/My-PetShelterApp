@@ -39,7 +39,7 @@ const Update = (props) => {
                 likes
             })
             .then(res=>{
-                console.log(res)
+                console.log(res.data.errors)
                 if(res.data.errors){
                     console.log(res.data.errors)
                     setErrs(res.data.errors);
@@ -66,7 +66,7 @@ const Update = (props) => {
                             onChange= {(e) => setName(e.target.value)}
                             />
                              {
-                                errs.description ? <span  className="error-text">{errs.description.message}</span> : null
+                                errs.name ? <span  className="error-text">{errs.name.message}</span> : null
                               }
                             </div>
                             <div>
@@ -113,7 +113,6 @@ const Update = (props) => {
                         <div>
                             <button type ="submit">Update </button>
                             <button onClick ={() => navigate("/")}>Cancel</button>
-                            <button >Likes</button>
                         </div>
 
                     </form>

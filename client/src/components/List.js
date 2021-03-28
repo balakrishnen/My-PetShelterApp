@@ -34,6 +34,7 @@ const ListAll = (props) => {
                     <th>Name </th>
                     <th>Type</th>
                     <th>Actions avaiable</th>
+                    <th>Votes</th>
                     </thead>
                     <tbody>
                     { allPets.map((pet,index) => (
@@ -49,10 +50,12 @@ const ListAll = (props) => {
                             <button className=".deleteBtn" onClick ={() => deletePet(pet._id)}>Adopt</button>
                             </td>
                             <td>
+                                <span>{pet.likes}</span>
                                 <button onClick={(e) => {
                                 e.target.setAttribute("disabled", true);
                                 }
                                 }>Like</button>
+                               
                             </td>
                         </tr>
                 ))}

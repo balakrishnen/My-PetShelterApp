@@ -93,7 +93,6 @@ const New = (props) => {
                         <div>
                             <button type ="submit">Add Pet</button>
                             <button onClick ={() => navigate("/")}>Cancel</button>
-                            <button >Likes</button>
                         </div>
 
                     </form>

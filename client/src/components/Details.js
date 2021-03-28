@@ -20,6 +20,7 @@ const Detail = (props) => {
             <p>Skill1:{detail.skill1} </p>
             <p>Skill2:{detail.skill2} </p>
             <p>Skill3:{detail.skill3}</p>
+            <p>Likes:{detail.likes}</p>
             <Link to ="/">
                 <button>Back</button>
             </Link>
