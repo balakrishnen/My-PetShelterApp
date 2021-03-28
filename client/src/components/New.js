@@ -57,7 +57,7 @@ const New = (props) => {
                               }
                               {
                                   name.length <3 && name.length >0?
-                                  <span className="error-text">name &gt; {name.length} </span>
+                                  <span className="error-text">name &gt; 3 </span>
                                   :null
                               }
                             </div>
@@ -72,7 +72,7 @@ const New = (props) => {
                               }
                                {
                                   type.length <3 && type.length >0 ?
-                                  <span className="error-text">type &gt; {type.length} </span>
+                                  <span className="error-text">type &gt; 3 </span>
                                   :null
                               }
                            </div>
@@ -86,7 +86,7 @@ const New = (props) => {
                               }
                                {
                                   description.length <3 && description.length >0?
-                                <span className="error-text">description &gt; {description.length} </span>
+                                <span className="error-text">description &gt; 3 </span>
                                   :null
                               }
                             </div>
