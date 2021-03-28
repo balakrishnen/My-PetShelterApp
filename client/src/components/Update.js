@@ -24,6 +24,7 @@ const Update = (props) => {
                    setSkill1(res.data.skill1);
                    setSkill2(res.data.skill2);
                    setSkill3(res.data.skill3);
+                   setLikes(res.data.likes);
                    
                 } )
         }, [])
@@ -108,6 +109,13 @@ const Update = (props) => {
                             <input type ="text"
                             value ={skill3}
                             onChange= {(e) => setSkill3(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label>Likes:</label>
+                            <input type ="text"
+                            value ={likes}
+                            onChange= {(e) => setLikes(e.target.value)}
                             />
                         </div>
                         <div>
