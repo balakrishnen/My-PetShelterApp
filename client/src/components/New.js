@@ -32,7 +32,10 @@ const New = (props) => {
                     console.log(res.data.errors)
                     setErrs(res.data.errors);
                 }
-                console.log(res)
+                else{
+                    console.log(res.data);
+                    navigate("/");
+                }
             })
             .catch(err=>console.log(err))
             }
