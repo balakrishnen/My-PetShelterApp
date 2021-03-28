@@ -39,9 +39,10 @@ module.exports={
     },
     update: (req, res) => {
       console.log(req.body);
-      PetShelter.findByIdAndUpdate(req.params.id,req.body,{
-          new:true,
-          runValidators:true
+      PetShelter.findByIdAndUpdate(req.params.id,req.body,
+         { new:true,
+          runValidators:true,
+          context: 'query'
       })
         .then((updated) => {
           console.log(updated);
