@@ -24,7 +24,7 @@ const Update = (props) => {
                    setSkill1(res.data.skill1);
                    setSkill2(res.data.skill2);
                    setSkill3(res.data.skill3);
-                   setLikes(res.data.likes);
+                   
                    
                 } )
         }, [])
@@ -36,8 +36,8 @@ const Update = (props) => {
                 description,
                 skill1,
                 skill2,
-                skill3,
-                likes
+                skill3
+                
             })
             .then(res=>{
                 console.log(res.data.errors)
@@ -54,34 +54,48 @@ const Update = (props) => {
             }
             return(
                 <div>
-                    <h1> Update Pet details</h1>
-                    <Link to ="/">
-                <p>Home</p>
-               </Link>
+                     <div  className ="divInline">
+                        <h1>Pet Shelter</h1>
+                        <p className="linkToRight"><Link to ={"/"}>back to home</Link></p>
+                    </div>
+                    <p> Know a pet needing a home ?</p>
                     
-                    <form onSubmit={onSubmitHandler}>
-                        <div>
-                            <label>Name:</label>
+                    <form className="divBorder" onSubmit={onSubmitHandler}>
+                        <div  className="row">
+                        <div className="column left">
+                            <br />
+                            <br />
+                            <label>Pet Name:</label>
                             <input type ="text"
                             value ={name}
                             onChange= {(e) => setName(e.target.value)}
                             />
                              {
-                                errs.name ? <span  className="error-text">{errs.name.message}</span> : null
+                                errs.name ? <span className="error-text">{errs.name.message}</span> : null
                               }
-                            </div>
-                            <div>
-                            <label>Type:</label>
+                              {
+                                  name.length <3 && name.length >0?
+                                  <span className="error-text">name &gt; 3 </span>
+                                  :null
+                              }
+                            
+                           
+                            <label>Pet Type:</label>
                             <input type ="text"
                             value ={type}
                             onChange= {(e) => setType(e.target.value)}
                             />
-                             {
+                            {
                                 errs.type ? <span  className="error-text">{errs.type.message}</span> : null
                               }
-                           </div>
-                           <div>
-                            <label>Description:</label>
+                               {
+                                  type.length <3 && type.length >0 ?
+                                  <span className="error-text">type &gt; 3 </span>
+                                  :null
+                              }
+                          
+                           
+                            <label>Pet Description:</label>
                             <input type ="text"
                             value ={description}
                             onChange= {(e) => setDescription(e.target.value)}
@@ -89,43 +103,45 @@ const Update = (props) => {
                             {
                                 errs.description ? <span  className="error-text">{errs.description.message}</span> : null
                               }
+                               {
+                                  description.length <3 && description.length >0?
+                                <span className="error-text">description &gt; 3 </span>
+                                  :null
+                              }
                             </div>
-                            <div>
+                            </div>
+                           {/* <div className="row"> */}
+                           <p>Skills (optional)</p>
+                            <div className="column right">
+                            
                             <label>Skill1:</label>
                             <input type ="text"
                             value ={skill1}
                             onChange= {(e) => setSkill1(e.target.value)}
                             />
-                        </div>
-                        <div>
+                        
                             <label>Skill2:</label>
-                            <input type ="text"
+                            <input type ="text" 
                             value ={skill2}
                             onChange= {(e) => setSkill2(e.target.value)}
                             />
-                        </div>
-                        <div>
+                        
                             <label>Skill3:</label>
-                            <input type ="text"
+                            <input type ="text" 
                             value ={skill3}
                             onChange= {(e) => setSkill3(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label>Likes:</label>
-                            <input type ="text"
-                            value ={likes}
-                            onChange= {(e) => setLikes(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <button type ="submit">Update </button>
-                            <button onClick ={() => navigate("/")}>Cancel</button>
-                        </div>
+                       
+                        <div align="left">
+                            <button type ="submit">&#9998;Edit Pet</button>
+                      
+                        </div> 
+                        </form>
 
-                    </form>
+</div>
 
-                </div>
+                
             )
 }
 export default Update;

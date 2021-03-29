@@ -41,13 +41,18 @@ const New = (props) => {
             }
             return(
                 <div>
-                    <h1> Add a new pet</h1>
-                    <Link to ="/">
-                       <p>Home</p>  
-                    </Link>
-                    <form onSubmit={onSubmitHandler}>
-                        <div>
-                            <label>Name:</label>
+                     <div  className ="divInline">
+                        <h1>Pet Shelter</h1>
+                        <p className="linkToRight"><Link to ={"/"}>back to home</Link></p>
+                    </div>
+                    <p> Know a pet needing a home ?</p>
+                    
+                    <form className="divBorder" onSubmit={onSubmitHandler}>
+                        <div  className="row">
+                        <div className="column left">
+                            <br />
+                            <br />
+                            <label>Pet Name:</label>
                             <input type ="text"
                          
                             onChange= {(e) => setName(e.target.value)}
@@ -60,9 +65,9 @@ const New = (props) => {
                                   <span className="error-text">name &gt; 3 </span>
                                   :null
                               }
-                            </div>
-                            <div>
-                            <label>Type:</label>
+                            
+                           
+                            <label>Pet Type:</label>
                             <input type ="text"
                             
                             onChange= {(e) => setType(e.target.value)}
@@ -75,9 +80,9 @@ const New = (props) => {
                                   <span className="error-text">type &gt; 3 </span>
                                   :null
                               }
-                           </div>
-                           <div>
-                            <label>Description:</label>
+                          
+                           
+                            <label>Pet Description:</label>
                             <input type ="text"
                             onChange= {(e) => setDescription(e.target.value)}
                             />
@@ -90,27 +95,30 @@ const New = (props) => {
                                   :null
                               }
                             </div>
-                            <div>
+                            </div>
+                           {/* <div className="row"> */}
+                           <p>Skills (optional)</p>
+                            <div className="column right">
+                            
                             <label>Skill1:</label>
                             <input type ="text"
                             onChange= {(e) => setSkill1(e.target.value)}
                             />
-                        </div>
-                        <div>
+                        
                             <label>Skill2:</label>
-                            <input type ="text"
+                            <input type ="text" 
                             onChange= {(e) => setSkill2(e.target.value)}
                             />
-                        </div>
-                        <div>
+                        
                             <label>Skill3:</label>
-                            <input type ="text"
+                            <input type ="text" 
                             onChange= {(e) => setSkill3(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <button type ="submit">Add Pet</button>
-                            <button onClick ={() => navigate("/")}>Cancel</button>
+                       
+                        <div align="left">
+                            <button type ="submit"><i class="fas fa-upload"></i>Add Pet</button>
+                      
                         </div>
 
                     </form>

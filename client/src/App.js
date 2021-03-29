@@ -9,13 +9,13 @@ import { Router } from '@reach/router';
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Router>
       <ListAll path ="/" />
       <New path="/pet/" />
       <Details path ="/pet/:id"/> 
       <Update path ="/pet/:id/edit"/> 
-      </Router>
+          </Router>
     </div>
   );
 }
